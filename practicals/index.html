@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MERN Practicals - File Index</title>
+<style>
+:root{
+  --bg:#f7f7f5; --surface:#ffffff; --text:#1f2328; --muted:#5f6670; --line:#e3e3df;
+  --accent:#2f6f4f; --accent-soft:#e6f2ec; --code-bg:#ffffff; --code-bar:#f0f0ec; --shadow:0 1px 3px rgba(0,0,0,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181a; --surface:#1e2124; --text:#e6e8ea; --muted:#9aa2ab; --line:#32373c;
+    --accent:#6fcf9c; --accent-soft:#1f3329; --code-bar:#2a2e32; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181a; --surface:#1e2124; --text:#e6e8ea; --muted:#9aa2ab; --line:#32373c;
+  --accent:#6fcf9c; --accent-soft:#1f3329; --code-bar:#2a2e32; --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:16px}
+.layout{display:flex;min-height:100vh}
+nav.side{position:sticky;top:0;align-self:flex-start;height:100vh;width:290px;flex:0 0 290px;overflow-y:auto;background:var(--surface);border-right:1px solid var(--line);padding:20px 14px 40px}
+nav.side h1{font-size:15px;margin:0 0 4px;letter-spacing:.2px}
+nav.side .sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+nav.side a{display:block;color:var(--text);text-decoration:none;padding:4px 10px;border-radius:6px;font-size:13.5px}
+nav.side a.l2{font-weight:600;margin-top:10px;background:var(--accent-soft);color:var(--accent)}
+nav.side a.l3{padding-left:20px;color:var(--muted);font-size:12.5px}
+nav.side a:hover{background:var(--accent-soft);color:var(--accent)}
+main{flex:1;min-width:0;padding:32px clamp(16px,4vw,56px) 80px;max-width:980px;margin:0 auto}
+header.top{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
+header.top h1{margin:0;font-size:clamp(22px,3.4vw,32px)}
+header.top .college{color:var(--muted);font-size:14px}
+.tools{display:flex;gap:8px}
+.tools button,.copy{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:4px 10px;border-radius:6px;cursor:pointer}
+.tools button:hover,.copy:hover{border-color:var(--accent);color:var(--accent)}
+table.index{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);font-size:14.5px;margin-bottom:12px}
+table.index th,table.index td{padding:7px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.index th{background:var(--code-bar);font-size:13px}
+table.index tr.main td{font-weight:600;background:var(--accent-soft)}
+table.index td.sub{text-align:center;color:var(--muted);width:60px}
+table.index td:first-child{width:70px;text-align:center}
+table.index td:last-child{width:90px}
+table.index a{color:inherit;text-decoration:none}
+table.index a:hover{text-decoration:underline}
+.module{margin-top:56px;text-align:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h2.prac{margin:4px 0 8px;text-align:center;font-size:30px;color:var(--accent)}
+.aim{background:var(--accent-soft);border-left:4px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;font-weight:600;margin:10px 0 22px}
+h3{margin:34px 0 10px;font-size:20px;padding-top:8px;border-top:1px dashed var(--line)}
+h4{margin:20px 0 6px;font-size:16.5px}
+p{margin:8px 0}
+p.step{margin-top:14px}
+ul{margin:8px 0 8px 4px;padding-left:22px}
+li{margin:3px 0}
+code.inl,.cmd code{font-family:Consolas,"SFMono-Regular",Menlo,monospace;font-size:14px;background:var(--code-bar);border:1px solid var(--line);padding:1px 7px;border-radius:5px}
+.cmd{margin:8px 0}
+.cmd code{display:inline-block;padding:6px 12px;background:#1d2125;color:#e5e7eb;border-color:#1d2125}
+.cmd code::before{content:"$ ";color:#7ee0a6}
+.cmd.ps code::before{content:""}
+.outlabel{margin:16px 0 4px;font-weight:700;color:var(--accent)}
+.code{margin:10px 0 14px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--code-bg);box-shadow:var(--shadow)}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:4px 10px;background:var(--code-bar);font-size:12px;color:var(--muted);font-family:system-ui,sans-serif}
+.code pre{margin:0;padding:12px 16px;overflow-x:auto;background:#ffffff;color:#000000;font-family:Consolas,"SFMono-Regular",Menlo,"Courier New",monospace;font-size:13.5px;line-height:1.55;tab-size:2}
+.code .copy{color:var(--text)}
+.shots{display:flex;flex-direction:column;gap:10px;margin:8px 0 16px}
+.shots figure{margin:0}
+.shots img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff;box-shadow:var(--shadow)}
+.menu{display:none}
+@media (max-width:900px){
+  nav.side{display:none;position:fixed;z-index:20;inset:0 auto 0 0;width:84%;max-width:320px;box-shadow:0 0 40px rgba(0,0,0,.35)}
+  nav.side.open{display:block}
+  .menu{display:inline-block}
+}
+@media print{
+  nav.side,.tools,.copy{display:none!important}
+  body{background:#fff}
+  .code pre{white-space:pre-wrap}
+  h2.prac{break-before:page}
+}
+</style>
+<style>main{max-width:1200px} table.index td:last-child{width:auto} .note{margin:16px 0;padding:12px 16px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0}</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <div>
+    <h1>Full Stack Development MERN</h1>
+    <div class="college">B.N.N. College, Bhiwandi · Practical File Index</div>
+  </div>
+  <div class="tools"><a class="copy" href="complete-journal.html">Complete journal</a></div>
+</header>
+<h2 class="prac">Practical Files</h2>
+<p class="note">Each lettered practical is stored in its own file. The filename includes the practical number, section letter, and practical name.</p>
+<table class="index"><thead><tr><th>Practical No.</th><th>Section</th><th>Practical Name</th><th>File Name</th></tr></thead><tbody>
+<tr><td>1</td><td>A</td><td>Install Node.js and Visual Studio Code ,and verify installation.</td><td><a href="practical-1-a-install-node-js-and-visual-studio-code-and-verify-installation.html">practical-1-a-install-node-js-and-visual-studio-code-and-verify-installation.html</a></td></tr><tr><td>1</td><td>B</td><td>Create a simple Node.js file and run it using terminal.</td><td><a href="practical-1-b-create-a-simple-node-js-file-and-run-it-using-terminal.html">practical-1-b-create-a-simple-node-js-file-and-run-it-using-terminal.html</a></td></tr><tr><td>1</td><td>C</td><td>Write a Node.js script demonstrating basic JavaScript commands (console log, variables, and arithmetic operations).</td><td><a href="practical-1-c-write-a-node-js-script-demonstrating-basic-javascript-commands-console-log-variables-and-arithmetic-operations.html">practical-1-c-write-a-node-js-script-demonstrating-basic-javascript-commands-console-log-variables-and-arithmetic-operations.html</a></td></tr><tr><td>1</td><td>D</td><td>Create and run a simple program using variables and functions.</td><td><a href="practical-1-d-create-and-run-a-simple-program-using-variables-and-functions.html">practical-1-d-create-and-run-a-simple-program-using-variables-and-functions.html</a></td></tr><tr><td>1</td><td>E</td><td>Demonstrating use of operators and control statement in JavaScript.</td><td><a href="practical-1-e-demonstrating-use-of-operators-and-control-statement-in-javascript.html">practical-1-e-demonstrating-use-of-operators-and-control-statement-in-javascript.html</a></td></tr><tr><td>1</td><td>F</td><td>Write a program using loops and template literals.</td><td><a href="practical-1-f-write-a-program-using-loops-and-template-literals.html">practical-1-f-write-a-program-using-loops-and-template-literals.html</a></td></tr><tr><td>2</td><td>A</td><td>Write a program to create a function and call them with parameters.</td><td><a href="practical-2-a-write-a-program-to-create-a-function-and-call-them-with-parameters.html">practical-2-a-write-a-program-to-create-a-function-and-call-them-with-parameters.html</a></td></tr><tr><td>2</td><td>B</td><td>Work with arrays and objects in JavaScript.</td><td><a href="practical-2-b-work-with-arrays-and-objects-in-javascript.html">practical-2-b-work-with-arrays-and-objects-in-javascript.html</a></td></tr><tr><td>2</td><td>C</td><td>Demonstrate the use of Arrow Function.</td><td><a href="practical-2-c-demonstrate-the-use-of-arrow-function.html">practical-2-c-demonstrate-the-use-of-arrow-function.html</a></td></tr><tr><td>2</td><td>E</td><td>Write a program using Array Methods. (Map, Filter, Reduces).</td><td><a href="practical-2-e-write-a-program-using-array-methods-map-filter-reduces.html">practical-2-e-write-a-program-using-array-methods-map-filter-reduces.html</a></td></tr><tr><td>2</td><td>E</td><td>Create a program that manipulates objects and display outputs.</td><td><a href="practical-2-e-create-a-program-that-manipulates-objects-and-display-outputs.html">practical-2-e-create-a-program-that-manipulates-objects-and-display-outputs.html</a></td></tr><tr><td>2</td><td>F</td><td>Implement a small JavaScript program combining functions, arrays and Objects.</td><td><a href="practical-2-f-implement-a-small-javascript-program-combining-functions-arrays-and-objects.html">practical-2-f-implement-a-small-javascript-program-combining-functions-arrays-and-objects.html</a></td></tr><tr><td>3</td><td>A</td><td>Create a React application using Vite/CRA and display “Welcome to MERN Stack Development”.</td><td><a href="practical-3-a-create-a-react-application-using-vite-cra-and-display-welcome-to-mern-stack-development.html">practical-3-a-create-a-react-application-using-vite-cra-and-display-welcome-to-mern-stack-development.html</a></td></tr><tr><td>3</td><td>B</td><td>Display dynamic data using JSX.</td><td><a href="practical-3-b-display-dynamic-data-using-jsx.html">practical-3-b-display-dynamic-data-using-jsx.html</a></td></tr><tr><td>3</td><td>C</td><td>Write a program to declare variables and writw a function to calculate sum of 2 numbers and display results.</td><td><a href="practical-3-c-write-a-program-to-declare-variables-and-writw-a-function-to-calculate-sum-of-2-numbers-and-display-results.html">practical-3-c-write-a-program-to-declare-variables-and-writw-a-function-to-calculate-sum-of-2-numbers-and-display-results.html</a></td></tr><tr><td>3</td><td>D</td><td>Apply Basic css styling to React Component.</td><td><a href="practical-3-d-apply-basic-css-styling-to-react-component.html">practical-3-d-apply-basic-css-styling-to-react-component.html</a></td></tr><tr><td>3</td><td>E</td><td>Create a simple functional component and render in App.jsx.</td><td><a href="practical-3-e-create-a-simple-functional-component-and-render-in-app-jsx.html">practical-3-e-create-a-simple-functional-component-and-render-in-app-jsx.html</a></td></tr><tr><td>3</td><td>F</td><td>Create a React component that display current Date and Time Dynamically using JavaScript.</td><td><a href="practical-3-f-create-a-react-component-that-display-current-date-and-time-dynamically-using-javascript.html">practical-3-f-create-a-react-component-that-display-current-date-and-time-dynamically-using-javascript.html</a></td></tr><tr><td>4</td><td>A</td><td>Create a multiple components and render them on a single page.</td><td><a href="practical-4-a-create-a-multiple-components-and-render-them-on-a-single-page.html">practical-4-a-create-a-multiple-components-and-render-them-on-a-single-page.html</a></td></tr><tr><td>4</td><td>B</td><td>Pass the data between components using Props.</td><td><a href="practical-4-b-pass-the-data-between-components-using-props.html">practical-4-b-pass-the-data-between-components-using-props.html</a></td></tr><tr><td>4</td><td>C</td><td>Use the useState hook to manage and update data.</td><td><a href="practical-4-c-use-the-usestate-hook-to-manage-and-update-data.html">practical-4-c-use-the-usestate-hook-to-manage-and-update-data.html</a></td></tr><tr><td>4</td><td>D</td><td>Display the list of items stored in the state using map( ).</td><td><a href="practical-4-d-display-the-list-of-items-stored-in-the-state-using-map.html">practical-4-d-display-the-list-of-items-stored-in-the-state-using-map.html</a></td></tr><tr><td>4</td><td>E</td><td>Create a form component to accept user input and display it dynamically.</td><td><a href="practical-4-e-create-a-form-component-to-accept-user-input-and-display-it-dynamically.html">practical-4-e-create-a-form-component-to-accept-user-input-and-display-it-dynamically.html</a></td></tr><tr><td>4</td><td>F</td><td>Build a small interactive component (Eg., Counter or ToDo list).</td><td><a href="practical-4-f-build-a-small-interactive-component-eg-counter-or-todo-list.html">practical-4-f-build-a-small-interactive-component-eg-counter-or-todo-list.html</a></td></tr><tr><td>5</td><td>A</td><td>Install and configure React Router in the React application.</td><td><a href="practical-5-a-install-and-configure-react-router-in-the-react-application.html">practical-5-a-install-and-configure-react-router-in-the-react-application.html</a></td></tr><tr><td>5</td><td>B</td><td>Create a multiple pages an implement and navigation between them.</td><td><a href="practical-5-b-create-a-multiple-pages-an-implement-and-navigation-between-them.html">practical-5-b-create-a-multiple-pages-an-implement-and-navigation-between-them.html</a></td></tr><tr><td>5</td><td>C</td><td>Use Link and Routes to move between pages.</td><td><a href="practical-5-c-use-link-and-routes-to-move-between-pages.html">practical-5-c-use-link-and-routes-to-move-between-pages.html</a></td></tr><tr><td>5</td><td>D</td><td>Fetch data from public API using Axios.</td><td><a href="practical-5-d-fetch-data-from-public-api-using-axios.html">practical-5-d-fetch-data-from-public-api-using-axios.html</a></td></tr><tr><td>5</td><td>E</td><td>Display fetched data in table or list format.</td><td><a href="practical-5-e-display-fetched-data-in-table-or-list-format.html">practical-5-e-display-fetched-data-in-table-or-list-format.html</a></td></tr><tr><td>5</td><td>F</td><td>Implement search or filter functionality on displayed data.</td><td><a href="practical-5-f-implement-search-or-filter-functionality-on-displayed-data.html">practical-5-f-implement-search-or-filter-functionality-on-displayed-data.html</a></td></tr><tr><td>6</td><td>A</td><td>Install Express and create a simple server.</td><td><a href="practical-6-a-install-express-and-create-a-simple-server.html">practical-6-a-install-express-and-create-a-simple-server.html</a></td></tr><tr><td>6</td><td>B</td><td>Create Multiple Routes in Express</td><td><a href="practical-6-b-create-multiple-routes-in-express.html">practical-6-b-create-multiple-routes-in-express.html</a></td></tr><tr><td>6</td><td>C</td><td>Send HTML Content from Express Server</td><td><a href="practical-6-c-send-html-content-from-express-server.html">practical-6-c-send-html-content-from-express-server.html</a></td></tr><tr><td>6</td><td>D</td><td>Handle Route Parameters in Express</td><td><a href="practical-6-d-handle-route-parameters-in-express.html">practical-6-d-handle-route-parameters-in-express.html</a></td></tr><tr><td>6</td><td>E</td><td>Handle Query Parameters in Express</td><td><a href="practical-6-e-handle-query-parameters-in-express.html">practical-6-e-handle-query-parameters-in-express.html</a></td></tr><tr><td>6</td><td>F</td><td>Create a Simple JSON API using Express</td><td><a href="practical-6-f-create-a-simple-json-api-using-express.html">practical-6-f-create-a-simple-json-api-using-express.html</a></td></tr><tr><td>7</td><td>A</td><td>Download MongoDB Community Server</td><td><a href="practical-7-a-download-mongodb-community-server.html">practical-7-a-download-mongodb-community-server.html</a></td></tr><tr><td>7</td><td>B</td><td>Perform CRUD operations using MongoDB Compass.</td><td><a href="practical-7-b-perform-crud-operations-using-mongodb-compass.html">practical-7-b-perform-crud-operations-using-mongodb-compass.html</a></td></tr><tr><td>7</td><td>C</td><td>Connect Node.js with MongoDB using Mongoose.</td><td><a href="practical-7-c-connect-node-js-with-mongodb-using-mongoose.html">practical-7-c-connect-node-js-with-mongodb-using-mongoose.html</a></td></tr><tr><td>8</td><td>A</td><td>Create a MongoDB Scheme and model using Mongoose.</td><td><a href="practical-8-a-create-a-mongodb-scheme-and-model-using-mongoose.html">practical-8-a-create-a-mongodb-scheme-and-model-using-mongoose.html</a></td></tr><tr><td>8</td><td>B</td><td>Implement REST API Operations.</td><td><a href="practical-8-b-implement-rest-api-operations.html">practical-8-b-implement-rest-api-operations.html</a></td></tr><tr><td>8</td><td>C</td><td>Test REST APIs Using Postman.</td><td><a href="practical-8-c-test-rest-apis-using-postman.html">practical-8-c-test-rest-apis-using-postman.html</a></td></tr><tr><td>9</td><td>A</td><td>Create the React Frontend and connect it with Express.</td><td><a href="practical-9-a-create-the-react-frontend-and-connect-it-with-express.html">practical-9-a-create-the-react-frontend-and-connect-it-with-express.html</a></td></tr><tr><td>9</td><td>B</td><td>Retrieve and Display Student Records.</td><td><a href="practical-9-b-retrieve-and-display-student-records.html">practical-9-b-retrieve-and-display-student-records.html</a></td></tr><tr><td>9</td><td>C</td><td>Add, Update and Delete Student Records.</td><td><a href="practical-9-c-add-update-and-delete-student-records.html">practical-9-c-add-update-and-delete-student-records.html</a></td></tr><tr><td>10</td><td>A</td><td>Design and Execute the Complete MERN Application.</td><td><a href="practical-10-a-design-and-execute-the-complete-mern-application.html">practical-10-a-design-and-execute-the-complete-mern-application.html</a></td></tr>
+</tbody></table>
+</main>
+</body>
+</html>
